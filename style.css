@@ -1,15 +1,26 @@
 /* Variables de couleurs pour correspondre au design */
+/* Variables de couleurs - Thème Aesthetic / Pale */
 :root {
-    --bg-color: #121212;        /* Fond de la page (noir très sombre) */
-    --card-bg: #1e1e1e;         /* Fond des cartes (gris anthracite) */
-    --primary-blue: #3498db;    /* Bleu plus lumineux pour le contraste */
-    --text-main: #e0e0e0;       /* Texte principal (gris très clair) */
-    --text-muted: #a0a0a0;     /* Texte secondaire (gris moyen) */
-    --blue-tag-bg: #1a3a5a;     /* Fond des badges bleus plus sombre */
-    --blue-tag-text: #81b9ff;   /* Texte des badges bleus plus clair */
-    --yellow-tag-bg: #332b00;   /* Fond des badges jaunes plus sombre */
-    --yellow-tag-text: #ffd54f; /* Texte des badges jaunes plus clair */
-    --footer-bg: #0a0a0a;       /* Pied de page presque noir */
+    /* --- Fonds et Surfaces --- */
+    --bg-color: #FCF9F2;        /* Fond de la page : Crème doux / Blanc cassé */
+    --card-bg: #FFFFFF;         /* Fond des cartes : Blanc pur pour détacher le contenu */
+    --footer-bg: #F5EFE6;       /* Pied de page : Crème légèrement plus soutenu */
+    
+    /* --- Textes --- */
+    --text-main: #4A423E;       /* Texte principal : Brun/Gris très foncé (plus doux que le noir) */
+    --text-muted: #9E948F;      /* Texte secondaire : Gris chaud */
+    
+    /* --- Couleurs d'Accentuation --- */
+    --primary-accent: #F2B8C6;  /* Couleur principale : Rose poudré / Pastel */
+    --primary-hover: #E89EAE;   /* Rose légèrement plus foncé pour le survol des liens/boutons */
+    
+    /* --- Badges / Tags (Anciennement Bleu) --- */
+    --tag-primary-bg: #FCE8ED;  /* Fond du badge : Rose très très clair */
+    --tag-primary-text: #D9738A;/* Texte du badge : Rose soutenu pour la lisibilité */
+    
+    /* --- Badges / Tags (Anciennement Jaune) --- */
+    --tag-secondary-bg: #FFF3D6;  /* Fond du badge : Jaune pastel/beurre */
+    --tag-secondary-text: #D4A017;/* Texte du badge : Ocre/Or soutenu */
 }
 /* Bannière Hero */
 .hero-banner {
@@ -138,8 +149,8 @@ body {
 }
 
 .top-nav a:hover, .top-nav a.active {
-    color: var(--primary-blue);
-    border-bottom-color: var(--primary-blue);
+    color: var(--primary-accent);
+    border-bottom-color: var(--primary-accent);
 }
 
 /* Layout principal */
@@ -160,7 +171,7 @@ main {
 
 .subsection-title {
     font-size: 1.2rem;
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     margin: 2rem 0 1rem 0;
     display: flex;
     align-items: center;
@@ -226,7 +237,7 @@ main {
 }
 
 .meta-info .company {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     font-weight: 600;
 }
 
@@ -270,13 +281,13 @@ main {
 }
 
 .tag-blue {
-    background-color: var(--blue-tag-bg);
-    color: var(--blue-tag-text);
+    background-color: var(--tag-primary-bg);
+    color: var(--tag-primary-text);
 }
 
 .tag-yellow {
-    background-color: var(--yellow-tag-bg);
-    color: var(--yellow-tag-text);
+    background-color: var(--tag-secondary-bg);
+    color: var(--tag-secondary-text);
     border: 1px solid #ffeeba;
 }
 
@@ -306,14 +317,14 @@ footer {
 }
 
 .social-links a:hover {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
 }
 
 .fab-download {
     position: absolute;
     right: 2rem;
     top: -25px;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-accent);
     color: white;
     width: 50px;
     height: 50px;
@@ -359,7 +370,7 @@ footer {
 
 .soft-skill-card i {
     font-size: 1.8rem;
-    color: var(--primary-blue);
+    color: var(--primary-accent);
 }
 
 .soft-skill-card span {
@@ -400,7 +411,7 @@ footer {
 
 .progress {
     height: 100%;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-accent);
     border-radius: 10px;
 }
 
@@ -530,7 +541,7 @@ footer {
 }
 
 .math-block h5 {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     margin-bottom: 8px;
     font-size: 0.85rem; /* Police plus petite pour le titre */
     border-bottom: 1px solid #333;
@@ -556,7 +567,7 @@ footer {
 
 .math-block li::before {
     content: "•";
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     position: absolute;
     left: 0;
 }
@@ -585,7 +596,7 @@ footer {
 }
 
 .thesis-label {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -597,7 +608,7 @@ footer {
 }
 
 .thesis-download {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     font-size: 1.2rem;
     text-decoration: none;
     transition: transform 0.2s, color 0.2s;
@@ -622,7 +633,7 @@ footer {
 }
 
 .education-link:hover {
-    color: var(--primary-blue) !important; /* Devient bleu au passage de la souris */
+    color: var(--primary-accent) !important; /* Devient bleu au passage de la souris */
     text-decoration: underline; /* Optionnel : souligne au survol pour l'ergonomie */
 }
 
@@ -762,7 +773,7 @@ main section.active-section {
 }
 
 .project-overlay h4 {
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(52, 152, 219, 0.3);
@@ -788,7 +799,7 @@ main section.active-section {
 
 .project-overlay li::before {
     content: "▹"; /* Petite flèche discrète */
-    color: var(--primary-blue);
+    color: var(--primary-accent);
     position: absolute;
     left: 0;
 }
@@ -799,7 +810,7 @@ main section.active-section {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: var(--primary-blue);
+    background-color: var(--primary-accent);
     color: white;
     text-decoration: none;
     padding: 8px 15px;
