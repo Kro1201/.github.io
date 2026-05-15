@@ -1,32 +1,39 @@
-/* Variables de couleurs pour correspondre au design */
-/* Variables de couleurs - Thème Aesthetic / Pale */
+/* Variables de couleurs - Thème Dark Aesthetic (Noir, Rose Pastel, Beige) */
 :root {
     /* --- Fonds et Surfaces --- */
-    --bg-color: #FCF9F2;        /* Fond de la page : Crème doux / Blanc cassé */
-    --card-bg: #FFFFFF;         /* Fond des cartes : Blanc pur pour détacher le contenu */
-    --footer-bg: #F5EFE6;       /* Pied de page : Crème légèrement plus soutenu */
+    --bg-color: #121212;        /* Noir profond pour le fond de page */
+    --card-bg: #1e1e1e;         /* Gris anthracite pour faire ressortir les cartes */
+    --footer-bg: #0a0a0a;       /* Noir très profond pour bannière et footer */
     
     /* --- Textes --- */
-    --text-main: #4A423E;       /* Texte principal : Brun/Gris très foncé (plus doux que le noir) */
-    --text-muted: #9E948F;      /* Texte secondaire : Gris chaud */
+    --text-main: #FDFBF7;       /* Blanc cassé/beige très clair pour le texte principal */
+    --text-muted: #B8B0AA;      /* Gris/beige doux pour le texte secondaire */
     
     /* --- Couleurs d'Accentuation --- */
-    --primary-accent: #F2B8C6;  /* Couleur principale : Rose poudré / Pastel */
-    --primary-hover: #E89EAE;   /* Rose légèrement plus foncé pour le survol des liens/boutons */
+    --primary-accent: #F2B8C6;  /* Rose poudré / Pastel (très lisible sur fond noir) */
+    --primary-hover: #F8D6DE;   /* Rose légèrement plus clair au survol */
     
-    /* --- Badges / Tags (Anciennement Bleu) --- */
-    --tag-primary-bg: #FCE8ED;  /* Fond du badge : Rose très très clair */
-    --tag-primary-text: #D9738A;/* Texte du badge : Rose soutenu pour la lisibilité */
+    /* --- Badges / Tags --- */
+    --tag-primary-bg: rgba(242, 184, 198, 0.15);  
+    --tag-primary-text: #F2B8C6;                  
     
-    /* --- Badges / Tags (Anciennement Jaune) --- */
-    --tag-secondary-bg: #FFF3D6;  /* Fond du badge : Jaune pastel/beurre */
-    --tag-secondary-text: #D4A017;/* Texte du badge : Ocre/Or soutenu */
+    --tag-secondary-bg: rgba(245, 239, 230, 0.15);
+    --tag-secondary-text: #F5EFE6;                
 }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+}
+
 /* Bannière Hero */
 .hero-banner {
-    background-color: #0a0e14; /* Fond noir profond */
-    background-image: url('https://www.transparenttextures.com/patterns/constellation.png'); /* Effet réseau de points */
-    color: white;
+    background-color: var(--footer-bg); 
+    background-image: url('https://www.transparenttextures.com/patterns/constellation.png');
+    color: var(--text-main);
     padding: 60px 20px;
     display: flex;
     justify-content: center;
@@ -44,9 +51,9 @@
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 4px solid var(--primary-accent); /* Cerclage doux pastel */
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(242, 184, 198, 0.15); /* Ombre rosée */
 }
 
 .hero-text h1 {
@@ -57,7 +64,7 @@
 
 .hero-tagline {
     font-size: 1.1rem;
-    color: #cbd5e0;
+    color: var(--text-muted);
     margin-bottom: 20px;
     max-width: 600px;
 }
@@ -68,11 +75,11 @@
     gap: 20px;
     font-size: 0.9rem;
     margin-bottom: 15px;
-    color: #a0aec0;
+    color: var(--text-muted);
 }
 
 .hero-contact i, .hero-links i {
-    color: #3498db; /* Bleu pour les icônes */
+    color: var(--primary-accent); /* Remplacement de l'ancien bleu */
 }
 
 .hero-links {
@@ -81,7 +88,7 @@
 }
 
 .hero-links a {
-    color: white;
+    color: var(--text-main);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -92,7 +99,7 @@
 }
 
 .hero-links a:hover {
-    color: #3498db;
+    color: var(--primary-accent);
 }
 
 /* Adaptabilité Mobile */
@@ -109,18 +116,10 @@
     }
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    margin: 0;
-    padding: 0;
-}
-
 /* Navigation */
 .top-nav {
     background-color: var(--card-bg);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     padding: 0 2rem;
     position: sticky;
     top: 0;
@@ -183,7 +182,7 @@ main {
     background: var(--card-bg);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     margin-bottom: 1.5rem;
 }
 
@@ -210,12 +209,12 @@ main {
 
 .timeline-icon {
     position: absolute;
-    left: -3.3rem; /* Ajustement par rapport à la ligne */
+    left: -3.3rem; 
     top: 1rem;
     width: 40px;
     height: 40px;
     background: #1e1e1e;
-    border: 2px solid #333;
+    border: 2px solid var(--primary-accent); /* Liseré pastel pour les icônes */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -266,7 +265,7 @@ main {
     gap: 0.5rem;
 }
 
-/* Système de Badges (Tags) */
+/* Système de Badges (Tags) mis à jour */
 .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -280,21 +279,22 @@ main {
     font-weight: 500;
 }
 
-.tag-blue {
+.tag-primary {
     background-color: var(--tag-primary-bg);
     color: var(--tag-primary-text);
+    border: 1px solid rgba(242, 184, 198, 0.3); /* Liseré rose */
 }
 
-.tag-yellow {
+.tag-secondary {
     background-color: var(--tag-secondary-bg);
     color: var(--tag-secondary-text);
-    border: 1px solid #ffeeba;
+    border: 1px solid rgba(245, 239, 230, 0.3); /* Liseré beige */
 }
 
 /* Footer et Bouton Flottant */
 footer {
     background-color: var(--footer-bg);
-    color: white;
+    color: var(--text-main);
     padding: 1.5rem 2rem;
     margin-top: 4rem;
     position: relative;
@@ -310,7 +310,7 @@ footer {
 }
 
 .social-links a {
-    color: white;
+    color: var(--text-muted);
     margin-left: 1rem;
     font-size: 1.2rem;
     transition: color 0.3s;
@@ -320,34 +320,59 @@ footer {
     color: var(--primary-accent);
 }
 
-.fab-download {
-    position: absolute;
-    right: 2rem;
-    top: -25px;
-    background-color: var(--primary-accent);
-    color: white;
-    width: 50px;
-    height: 50px;
+.download-cv-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-accent); 
+    color: #121212; /* Icône noire pour contraste */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px;
     text-decoration: none;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
-    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(242, 184, 198, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.fab-download:hover {
-    transform: translateY(-3px);
+.download-cv-fab:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-hover);
+}
+
+.download-cv-fab .tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    border: 1px solid #333;
+}
+
+.download-cv-fab:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Ajustement des logos dans la timeline */
 .timeline-icon img {
-    width: 100%;       /* Forcer la largeur totale */
-    height: 100%;      /* Forcer la hauteur totale */
-    object-fit: cover;  /* Remplir le cercle, quitte à couper un peu les bords blancs */
-    border-radius: 50%; /* Garder le logo rond pour épouser le cercle */
+    width: 100%;       
+    height: 100%;      
+    object-fit: cover;  
+    border-radius: 50%; 
 }
 
 /* Grille pour les Soft Skills */
@@ -404,7 +429,7 @@ footer {
 .progress-bar {
     width: 100%;
     height: 8px;
-    background-color: #333; /* Fond sombre de la barre */
+    background-color: #333; 
     border-radius: 10px;
     overflow: hidden;
 }
@@ -418,68 +443,8 @@ footer {
 /* Effet au survol des cartes */
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(242, 184, 198, 0.05); /* Ombre rosée subtile */
     transition: all 0.3s ease;
-}
-
-/* Bouton flottant CV */
-.download-cv-fab {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #3498db; /* Bleu identique à votre modèle */
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.download-cv-fab:hover {
-    transform: scale(1.1);
-    background-color: #2980b9;
-}
-
-/* Infobulle (Tooltip) */
-.download-cv-fab .tooltip {
-    visibility: hidden;
-    width: 100px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%; /* Positionne au-dessus du bouton */
-    right: 0;
-    opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-}
-
-.download-cv-fab:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Petit triangle sous l'infobulle */
-.download-cv-fab .tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    right: 25px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
 }
 
 /* Grille des modules de mathématiques */
@@ -491,16 +456,16 @@ footer {
 }
 
 .math-column {
-    background: rgba(255, 255, 255, 0.03); /* Léger fond pour le mode sombre */
+    background: rgba(255, 255, 255, 0.03); 
     padding: 10px;
     border-radius: 5px;
 }
 
 .math-column h5 {
-    color: #3498db;
+    color: var(--primary-accent);
     font-size: 1rem;
     margin-bottom: 10px;
-    border-bottom: 1px solid #3498db;
+    border-bottom: 1px solid var(--primary-accent);
     padding-bottom: 5px;
 }
 
@@ -520,7 +485,7 @@ footer {
 
 .math-column li::before {
     content: "•";
-    color: #3498db;
+    color: var(--primary-accent);
     position: absolute;
     left: 0;
 }
@@ -536,17 +501,17 @@ footer {
 }
 
 .math-block {
-    flex: 1; /* Force les 3 colonnes à diviser l'espace en 3 parts égales */
-    min-width: 0; /* Empêche les colonnes de déborder */
+    flex: 1; 
+    min-width: 0; 
 }
 
 .math-block h5 {
     color: var(--primary-accent);
     margin-bottom: 8px;
-    font-size: 0.85rem; /* Police plus petite pour le titre */
+    font-size: 0.85rem; 
     border-bottom: 1px solid #333;
     padding-bottom: 4px;
-    white-space: nowrap; /* Empêche le titre de la colonne de passer sur 2 lignes */
+    white-space: nowrap; 
 }
 
 .math-block ul {
@@ -556,13 +521,13 @@ footer {
 }
 
 .math-block li {
-    font-size: 0.75rem; /* Police réduite pour faire tenir les longs intitulés */
+    font-size: 0.75rem; 
     line-height: 1.2;
     margin-bottom: 4px;
     color: var(--text-muted);
     position: relative;
     padding-left: 10px;
-    word-wrap: break-word; /* Coupe les mots si vraiment trop longs */
+    word-wrap: break-word; 
 }
 
 .math-block li::before {
@@ -572,27 +537,26 @@ footer {
     left: 0;
 }
 
-/* Ajustement pour les petits écrans (Tablettes/Mobiles) */
 @media (max-width: 768px) {
     .math-container {
-        flex-direction: column; /* Repasse en vertical sur mobile pour rester lisible */
+        flex-direction: column; 
     }
 }
 
 /* Style pour la section Mémoire */
 .thesis-container {
     display: flex;
-    justify-content: space-between; /* Pousse l'icône à droite */
+    justify-content: space-between; 
     align-items: center;
     margin-top: 15px;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(52, 152, 219, 0.2); /* Ligne subtile bleue */
+    border-bottom: 1px solid rgba(242, 184, 198, 0.2); /* Ligne subtile rose */
 }
 
 .thesis-content {
     display: flex;
-    gap: 10px; /* Espace entre le label et le titre */
-    flex-wrap: wrap; /* Permet au titre de passer en dessous sur petit écran */
+    gap: 10px; 
+    flex-wrap: wrap; 
 }
 
 .thesis-label {
@@ -616,7 +580,7 @@ footer {
 
 .thesis-download:hover {
     transform: scale(1.2);
-    color: #e74c3c; /* Change en rouge au survol pour rappeler le PDF */
+    color: var(--primary-hover); 
 }
 
 .thesis-description {
@@ -625,24 +589,22 @@ footer {
     color: var(--text-muted);
 }
 
-/* Force la couleur des liens, même visités */
 .education-link, 
 .education-link:visited {
-    color: #ffffff; /* Force le blanc pur */
-    text-decoration: none; /* Enlève le soulignement violet/bleu */
+    color: #ffffff; 
+    text-decoration: none; 
 }
 
 .education-link:hover {
-    color: var(--primary-accent) !important; /* Devient bleu au passage de la souris */
-    text-decoration: underline; /* Optionnel : souligne au survol pour l'ergonomie */
+    color: var(--primary-accent) !important; 
+    text-decoration: underline; 
 }
 
-/* Empêche le titre d'être caché sous la barre de navigation */
 section {
     scroll-margin-top: 150px;
 }
 
-/* --- 1. RÈGLES GÉNÉRALES (Toutes versions) --- */
+/* --- RÈGLES GÉNÉRALES --- */
 main section {
     display: none;
     animation: fadeIn 0.5s ease-out;
@@ -657,17 +619,15 @@ main section.active-section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- 2. RESPONSIVE DESIGN (MOBILE) --- */
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
 @media (max-width: 768px) {
-    /* RESET CRITIQUE : On force le body et main à ne pas déborder */
     body, html {
-        overflow-x: hidden; /* Empêche le scroll horizontal */
+        overflow-x: hidden; 
         width: 100%;
         margin: 0;
         padding: 0;
     }
 
-    /* 1. La Bannière */
     .hero-container {
         flex-direction: column;
         text-align: center;
@@ -680,48 +640,44 @@ main section.active-section {
         height: 120px;
     }
 
-    /* 2. La Navigation */
     .top-nav ul {
         flex-wrap: wrap;
         justify-content: center;
         padding: 5px;
     }
 
-    /* 3. Timeline & Cartes (Correction alignement strict) */
     .timeline {
         padding: 0 !important;
-        margin: 0 10px !important; /* Marge légère pour ne pas coller aux bords du téléphone */
+        margin: 0 10px !important; 
         position: relative;
     }
 
     .timeline-item {
         width: 100% !important;
-        padding-left: 40px !important; /* Laisse de la place pour le logo et la ligne */
+        padding-left: 40px !important; 
         margin-bottom: 25px !important;
         box-sizing: border-box !important;
-        display: block !important; /* Force l'empilement vertical */
+        display: block !important; 
     }
 
     .timeline::before {
-        left: 15px !important; /* Position de la ligne verticale */
+        left: 15px !important; 
     }
 
     .timeline-icon {
-        left: 0px !important; /* Place le logo pile sur la ligne */
+        left: 0px !important; 
         top: 10px;
         width: 32px !important;
         height: 32px !important;
         z-index: 5;
     }
 
-    /* 4. Grilles */
     .technical-skills-grid, .math-container {
         display: flex !important;
         flex-direction: column !important;
         gap: 15px;
     }
 
-    /* 5. Bouton CV */
     .download-cv-fab {
         width: 45px;
         height: 45px;
@@ -734,10 +690,10 @@ main section.active-section {
 
 .project-card {
     position: relative;
-    overflow: hidden; /* Coupe ce qui dépasse pour la surcouche */
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
-    min-height: 220px; /* Assure assez de place pour le texte au survol */
+    min-height: 220px; 
 }
 
 .project-content {
@@ -752,22 +708,17 @@ main section.active-section {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Fond très sombre (noir du site) avec 95% d'opacité */
     background-color: rgba(18, 18, 18, 0.95); 
     padding: 1.5rem;
     box-sizing: border-box;
-    
-    /* Animation fluide */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     z-index: 10;
 }
 
-/* Déclencheur : affiche la surcouche quand la souris est sur la carte */
 .project-card:hover .project-overlay {
     opacity: 1;
 }
@@ -776,7 +727,7 @@ main section.active-section {
     color: var(--primary-accent);
     margin: 0 0 1rem 0;
     font-size: 1.1rem;
-    border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+    border-bottom: 1px solid rgba(242, 184, 198, 0.3); /* Ligne rose */
     padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -798,30 +749,30 @@ main section.active-section {
 }
 
 .project-overlay li::before {
-    content: "▹"; /* Petite flèche discrète */
+    content: "▹"; 
     color: var(--primary-accent);
     position: absolute;
     left: 0;
 }
 
-/* Bouton optionnel dans l'overlay pour aller voir le code */
 .project-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: var(--primary-accent);
-    color: white;
+    background-color: var(--tag-primary-bg); /* Rose transparent */
+    color: var(--primary-accent);
+    border: 1px solid var(--primary-accent);
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 600;
     margin-top: auto;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
 }
 
 .project-link:hover {
-    background-color: #2980b9;
-    color: white;
+    background-color: var(--primary-accent);
+    color: #121212;
 }
